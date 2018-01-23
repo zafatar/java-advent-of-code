@@ -6,6 +6,8 @@ import com.zafatar.adventofcode.y2017.Day3;
 import com.zafatar.adventofcode.y2017.Day4;
 import com.zafatar.adventofcode.y2017.Day5;
 import com.zafatar.adventofcode.y2017.Day6;
+import com.zafatar.adventofcode.y2017.Day7;
+import com.zafatar.adventofcode.y2017.Day8;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
@@ -46,5 +48,17 @@ public class Main {
 		day6.solvePart1();				// Day #6 - Part #1
 		day6.solvePart2();				// Day #6 - Part #2		
 		System.out.println(separator);
+		
+		// Year 2017 - Day #7.
+		Day7 day7 = new Day7();			
+		day7.solvePart1();				// Day #7 - Part #1
+		day7.solvePart2();				// Day #7 - Part #2		
+		System.out.println(separator);
+		
+		// Year 2017 - Day #8.
+		Day8 day8 = new Day8();			
+		day8.solvePart1();				// Day #8 - Part #1
+		day8.solvePart2();				// Day #8 - Part #2		
+		System.out.println(separator);		
 	}
 }
