@@ -8,6 +8,7 @@ package com.zafatar.adventofcode.y2017;
  *
  */
 public interface Day {	
+	public void init();
 	public void solvePart1();
 	public void solvePart2();
 	public void prepareInput(String filepath);

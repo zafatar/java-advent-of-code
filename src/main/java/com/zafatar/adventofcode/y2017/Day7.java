@@ -15,13 +15,19 @@ import com.zafatar.adventofcode.y2017.day7.Tower;
  */
 public class Day7 implements Day {
 	private String inputFile = "/2017/Day7/input";
-	public HashMap<String, Tower> input = new HashMap<String, Tower>();
+	public HashMap<String, Tower> input;
 	
 	public Day7() {
 		super();
-		this.prepareInput(this.inputFile);
+		this.init();
 	}
 
+	@Override
+	public void init() {
+		this.input = new HashMap<String, Tower>();
+		this.prepareInput(this.inputFile);	
+	}
+	
 	@Override
 	public void solvePart1() {
 		String bottomProgramTag = this.getBottomProgramTag();

@@ -5,19 +5,27 @@ import java.util.ArrayList;
 import com.zafatar.adventofcode.utils.FileReader;
 
 public class Day5 implements Day {
-	// TODO: implement this structure to all DayN classes
 	private String inputFile = "/2017/Day5/input";
-	public ArrayList<Integer> input = new ArrayList<Integer>();
+	public ArrayList<Integer> input;
 	public int steps;
 
 	public Day5() {
 		super();
+		this.init();
+	}
+	
+	@Override
+	public void init() {
+		this.input = new ArrayList<Integer>();
+		this.steps = 0;
+		
 		this.prepareInput(this.inputFile);
 	}
 
 	@Override
 	public void solvePart1() {
-		this.reset();
+		this.init();
+		
 		int index = 0;   // Starting point for the jumps.
 		while (index < this.input.size()) {
 			int value = this.input.get(index); // Get value in the current offset.
@@ -32,7 +40,8 @@ public class Day5 implements Day {
 
 	@Override
 	public void solvePart2() {
-		this.reset();
+		this.init();
+		
 		int index = 0;  // Starting point for the jumps.
 		while (index < this.input.size()) {
 			int value = this.input.get(index); // Get value in the current offset.
@@ -60,13 +69,6 @@ public class Day5 implements Day {
 		for(String line: lines) {
 			this.input.add(Integer.parseInt(line));
 		}
-	}
-
-	private void reset() {
-		this.input = new ArrayList<Integer>();
-		this.steps = 0;
-		
-		this.prepareInput("/2017/Day5/input");
 	}
 }
 

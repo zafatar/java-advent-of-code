@@ -4,16 +4,26 @@ import java.util.ArrayList;
 import com.zafatar.adventofcode.utils.FileReader;
 
 public class Day2 implements Day {
-	public ArrayList<ArrayList<Integer>> input = new ArrayList<ArrayList<Integer>>();
+	private String inputFile = "/2017/Day2/input";
+	public ArrayList<ArrayList<Integer>> input;
 	public int result;
 
 	public Day2() {
 		super();
-		this.prepareInput("/2017/Day2/input");
+		this.init();
 	}
 
+	@Override 
+	public void init() {
+		this.input = new ArrayList<ArrayList<Integer>>();
+		this.result = 0;
+		
+		this.prepareInput(this.inputFile);
+	}
+	
+	@Override
 	public void solvePart1() {
-		int checksum = 0;
+		this.init();
 		
 		for (ArrayList<Integer> list : this.input) {
 			int local_min = 0;
@@ -28,14 +38,14 @@ public class Day2 implements Day {
 				}
 			}
 			int local_sum = local_max - local_min;
-			checksum += local_sum;
+			this.result += local_sum;
 		}
 
-		System.out.println("Day #2 - Part #1: " + checksum);
+		System.out.println("Day #2 - Part #1: " + this.result);
 	}
 
 	public void solvePart2() {
-		int checksum = 0;
+		this.init();
 
 		for (ArrayList<Integer> list : this.input) {
 			int local_min = 0;
@@ -65,10 +75,10 @@ public class Day2 implements Day {
 				}
 			}
 			int local_sum = local_max / local_min;
-			checksum += local_sum;
+			this.result += local_sum;
 		}
 
-		System.out.println("Day #2 - Part #2: " + checksum);
+		System.out.println("Day #2 - Part #2: " + this.result);
 	}
 
 	public void prepareInput(String filepath) {

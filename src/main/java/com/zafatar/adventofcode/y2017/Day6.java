@@ -8,17 +8,25 @@ import com.zafatar.adventofcode.utils.FileReader;
 
 public class Day6 implements Day {
 	private String inputFile = "/2017/Day6/input";
-	public ArrayList<Integer> input = new ArrayList<Integer>();
-	public HashMap<String, Integer> seenMap = new HashMap<String, Integer>();
+	public ArrayList<Integer> input;
+	public HashMap<String, Integer> seenMap;
 	
 	public Day6() {
 		super();
+		this.init();
+	}
+	
+	@Override
+	public void init() {
+		this.input = new ArrayList<Integer>();
+		this.seenMap = new HashMap<String, Integer>();
+		
 		this.prepareInput(this.inputFile);
 	}
 	
 	@Override
 	public void solvePart1() {
-		this.reset();
+		this.init();
 		
 		int noCycles = this.calculateNoCycles();
 		
@@ -27,7 +35,7 @@ public class Day6 implements Day {
 
 	@Override
 	public void solvePart2() {
-		this.reset();
+		this.init();
 
 		int noCycles = this.calculateNoCycles();
 		
@@ -122,13 +130,6 @@ public class Day6 implements Day {
 	 */
 	private String generateSignature() {
 		return String.join("_", this.input.toString());
-	}
-	
-	private void reset() {
-		this.input = new ArrayList<Integer>();
-		this.seenMap = new HashMap<String, Integer>();
-		
-		this.prepareInput("/2017/Day6/input");
 	}
 }
 

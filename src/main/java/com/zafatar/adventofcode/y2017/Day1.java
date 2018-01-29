@@ -6,16 +6,21 @@ import java.util.List;
 import com.zafatar.adventofcode.utils.FileReader;
 
 public class Day1 implements Day {
+	private String inputFile = "/2017/Day1/input";
 	public List<Integer> input = new ArrayList<Integer>(); 
 	public int result;
 
 	public Day1() {
-		this("/2017/Day1/input");
+		super();
+		this.init();
 	}
 	
-	public Day1(String filepath) {
-		super();
-		this.prepareInput(filepath);
+	@Override 
+	public void init() {
+		this.input = new ArrayList<Integer>(); 
+		this.result = 0;
+		
+		this.prepareInput(this.inputFile);
 	}
 	
 	@Override
@@ -60,6 +65,10 @@ public class Day1 implements Day {
 		for (int i = 0; i < tokens.length; i++) {
 		    this.input.add(Integer.parseInt(tokens[i]));
 		}
+	}
+	
+	public void setInputFile(String inputFile) {
+		this.inputFile = inputFile;
 	}
 }
 

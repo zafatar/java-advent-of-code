@@ -7,22 +7,31 @@ import java.util.HashMap;
 import com.zafatar.adventofcode.utils.FileReader;
 
 public class Day4 implements Day {
-	public ArrayList<ArrayList<String>> input = new ArrayList<ArrayList<String>>();
-	public int totalPhrases = 0;
-	public int notValid = 0;
-	public int valid = 0;
+	private String inputFile = "/2017/Day4/input";
+	public ArrayList<ArrayList<String>> input;
+	public int totalPhrases;
+	public int notValid;
+	public int valid;
 
 	public Day4() {
 		super();
-		this.prepareInput("/2017/Day4/input");
+		this.init();
 	}
 
 	@Override
-	public void solvePart1() {
-		// reset the counters.
+	public void init() {
+		this.input = new ArrayList<ArrayList<String>>();
 		this.totalPhrases = 0;
 		this.notValid = 0;
-
+		this.valid = 0;
+		
+		this.prepareInput(this.inputFile);
+	}
+	
+	@Override
+	public void solvePart1() {
+		this.init();
+		
 		for (ArrayList<String> phrase : this.input) {
 			HashMap<String, Integer> seen = new HashMap<String, Integer>();
 			for (String word : phrase) {
@@ -42,9 +51,7 @@ public class Day4 implements Day {
 
 	@Override
 	public void solvePart2() {
-		// reset the counters.
-		this.totalPhrases = 0;
-		this.notValid = 0;
+		this.init();
 
 		for (ArrayList<String> phrase : this.input) {
 			HashMap<String, Integer> seen = new HashMap<String, Integer>();

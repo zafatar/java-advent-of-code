@@ -18,7 +18,8 @@ public class Day1Test {
 
 	@Test
 	public void testSolvePart2With_1212() {
-		day1 = new Day1("/2017/Day1/input2");
+		day1 = new Day1();
+		day1.setInputFile("/2017/Day1/input2");
 		day1.solvePart2();
 
 		assertTrue( day1.result == 6);

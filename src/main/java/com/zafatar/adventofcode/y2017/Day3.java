@@ -4,20 +4,28 @@ import com.zafatar.adventofcode.utils.FileReader;
 import com.zafatar.adventofcode.y2017.day3.Grid;
 
 public class Day3 implements Day {
+	private String inputFile = "/2017/Day3/input";
 	public Integer input; // 312051
-	public int result;
 	public Grid grid;
-
+	public int result;
+	
 	public Day3() {
 		super();
-		this.prepareInput("/2017/Day3/input");
-		this.grid = new Grid();
+		this.init();
 	}
 
 	@Override
-	public void solvePart1() {
-		// Fresh start.
+	public void init() {
+		this.grid = new Grid();
 		grid.reset();
+		
+		this.prepareInput(this.inputFile);
+	}
+	
+	@Override
+	public void solvePart1() {
+		this.init(); 
+		
 		// Fill the grid with values, based on coordinates.
 		int value = 1;
 		while( value<=this.input ) { 
@@ -33,8 +41,8 @@ public class Day3 implements Day {
 	
 	@Override
 	public void solvePart2() {
-		// Fresh start.
-		grid.reset();
+		this.init();
+		
 		// Fill the grid with values, based on coordinates.
 		int value = 1;
 		while( value <= this.input ) {

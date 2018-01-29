@@ -10,7 +10,7 @@ import com.zafatar.adventofcode.y2017.day8.Instruction;
 import com.zafatar.adventofcode.y2017.day8.Register;
 
 public class Day8 implements Day {
-	public String inputFile = "/2017/Day8/input";
+	private String inputFile = "/2017/Day8/input";
 	public List<Instruction> instructions;
 	public Map<String, Register> registerMap;
 	public int result;
@@ -20,7 +20,8 @@ public class Day8 implements Day {
 		this.init();
 	}
 	
-	private void init() {
+	@Override
+	public void init() {
 		this.instructions = new ArrayList<Instruction>();
 		this.registerMap = new HashMap<String, Register>();
 	
